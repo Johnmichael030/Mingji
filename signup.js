@@ -15,7 +15,20 @@ document.getElementById('signupButton').addEventListener('click', function () {
         return;
     }
 
-    // Simulate successful sign-up
-    alert(`Sign-up successful! Welcome, ${fullname}!`);
-    document.getElementById('signupForm').reset();
+    // Send data to the server
+    fetch('/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fullname, username, password })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Show success message
+        document.getElementById('signupForm').reset();
+    })
+    .catch(error => {
+        alert('Error during signup: ' + error.message);
+    });
 });
