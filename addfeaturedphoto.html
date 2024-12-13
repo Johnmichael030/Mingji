@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Photos</title>
+  <link rel="stylesheet" href="addfeaturedphoto.css">
+</head>
+<body>
+  <div class="featured-photos-container">
+    <h1 id="photo-title" contenteditable="true">Featured Photos</h1>
+    
+    <header>
+        <a href="try.html" class="home-icon">Home</a>
+        <button id="add-photo-button">Add Photo</button>
+        <button id="save-title-button">Save</button>
+
+      </header>
+      
+    <div id="photo-grid" class="photo-grid">
+      <!-- Photos will be dynamically added here -->
+    </div>
+    <div id="photo-modal" class="photo-modal">
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="Featured Photo">
+      </div>
+    </div>
+  </div>
+  <script src="addfeaturedphoto.js"></script>
+</body>
+</html>
